@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print("User log in failed: \(error.localizedDescription)")
             } else {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 print("User logged in successfully")
                 // display view controller that needs to shown after successful login
             }
@@ -92,7 +93,9 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 print("User Registered successfully")
+                
                 //self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 // manually segue to logged in view
             }
